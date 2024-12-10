@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 module PunditRolePlay
-  module Models
+  module ActiveRecord
     def has_pundit_role
-      include PunditRolePlay::ModelMethods
+      include PunditRolePlay::ActiveRecordMethods
     end
   end
 
-  module ModelMethods
+  module ActiveRecordMethods
     def role
       value = super
 

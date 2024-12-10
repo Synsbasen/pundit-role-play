@@ -2,7 +2,7 @@
 
 require_relative "pundit_role_play/version"
 require_relative "pundit_role_play/role"
-require_relative "pundit_role_play/models"
+require_relative "pundit_role_play/active_record"
 
 module PunditRolePlay
   class Error < StandardError; end
@@ -14,7 +14,7 @@ module PunditRolePlay
 
   if defined?(Rails)
     ActiveSupport.on_load(:active_record) do
-      extend PunditRolePlay::Models
+      extend PunditRolePlay::ActiveRecord
     end
   end
 end
