@@ -4,6 +4,7 @@ require_relative "pundit_role_play/version"
 require_relative "pundit_role_play/role"
 require_relative "pundit_role_play/active_record"
 require_relative "pundit_role_play/pundit"
+require_relative "pundit_role_play/railtie"
 
 module PunditRolePlay
   class Error < StandardError; end
@@ -18,10 +19,18 @@ module PunditRolePlay
       extend PunditRolePlay::ActiveRecord
     end
   end
+
+  def self.roles
+    @roles ||= []
+  end
+
+  def self.register_role(name)
+    roles << name unless name == "ApplicationRole"
+  end
 end
 
 # TODO
-# - [ ] Define the roles somewhere - perhaps in a config file
+# - [x] Define the roles somewhere - perhaps in a config file
 #   - We list the roles a few places in Synsbasen BI so we need to get a list of available roles somehow
 # - [x] Add model helpers to get role and check permissions
 #   - [x] Make sure that an error is raised if the role does not exist
