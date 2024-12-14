@@ -14,12 +14,6 @@ module PunditRolePlay
     end
   end
 
-  if defined?(Rails)
-    ActiveSupport.on_load(:active_record) do
-      extend PunditRolePlay::ActiveRecord
-    end
-  end
-
   def self.roles
     @roles ||= []
   end
