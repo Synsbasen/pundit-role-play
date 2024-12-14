@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "pundit_role_play/version"
-require_relative "pundit_role_play/role"
-require_relative "pundit_role_play/active_record"
-require_relative "pundit_role_play/pundit"
+require_relative "pundit_role_play/adapter/active_record"
+require_relative "pundit_role_play/adapter/pundit"
 require_relative "pundit_role_play/railtie"
+require_relative "pundit_role_play/role"
+require_relative "pundit_role_play/version"
 
 module PunditRolePlay
   class Error < StandardError; end
@@ -29,8 +29,8 @@ end
 # - [x] Add model helpers to get role and check permissions
 #   - [x] Make sure that an error is raised if the role does not exist
 #   - [x] Make sure that permissions does not raise an error if the role is blank
-# - [ ] Add Pundit integration (like in BI)
+# - [x] Add Pundit integration (like in BI)
 #   - [x] Module to be included
-#   - [ ] Automatically include the module in ApplicationPolicy when the gem loads (like we do for ActiveRecord)
+#   - [x] Automatically include the module in ApplicationPolicy when the gem loads (like we do for ActiveRecord)
 # - [ ] Add Rails generator (rails g pundit_role_play:install) to create the app/roles folder and add an ApplicationRole
 # - [ ] Add Rails generator (rails g pundit_role_play:role <role_name>) to add a new role

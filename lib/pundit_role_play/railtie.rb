@@ -13,14 +13,14 @@ module PunditRolePlay
 
     initializer "pundit_role_play.extend_active_record" do
       ActiveSupport.on_load(:active_record) do
-        extend PunditRolePlay::ActiveRecord
+        extend PunditRolePlay::Adapter::ActiveRecord
       end
     end
 
     initializer "pundit_role_play.extend_application_policy" do
       Rails.application.config.to_prepare do
         if defined?(ApplicationPolicy)
-          ApplicationPolicy.include(PunditRolePlay::Pundit)
+          ApplicationPolicy.include(PunditRolePlay::Adapter::Pundit)
         end
       end
     end
