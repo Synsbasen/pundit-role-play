@@ -1,6 +1,6 @@
 # PunditRolePlay
 
-TODO: Write a gem description
+Ever wanted to have a simple way to manage roles and permissions in your Rails application? This gem is for you! It provides a simple way to manage roles and permissions using Pundit. All you need to do is define your roles and permissions and then use the `can_read?` and `can_write?` methods in your policies.
 
 ## Installation
 
@@ -18,6 +18,26 @@ Run the generator to setup an application role:
 
 ```
 bundle exec rails generate pundit_role_play:install
+```
+
+## Preconditions
+
+Ensure that the models you want to use roles and permissions with have a `role` attribute. This attribute should be a string and should be present in the database.
+
+```ruby
+class AddRoleToUsers < ActiveRecord::Migration[6.0]
+  def change
+    add_column :users, :role, :string #, default: "MemberRole"
+  end
+end
+```
+
+Furthermore, ensure that the `has_pundit_role` method is called in the User model.
+
+```ruby
+class User < ApplicationRecord
+  has_pundit_role
+end
 ```
 
 ## Usage
