@@ -1,8 +1,6 @@
 # PunditRolePlay
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pundit_role_play`. To experiment with that code, run `bin/console` for an interactive prompt.
+TODO: Write a gem description
 
 ## Installation
 
@@ -16,9 +14,59 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
 
+Run the generator to setup an application role:
+
+```
+bundle exec rails generate pundit_role_play:install
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+Create a new role:
+
+```
+bundle exec rails generate pundit_role_play:role admin
+```
+
+Then define the permissions based on your resources.
+
+In your policies you can now use the `can_read?` and `can_write?` methods to check if a user has the required permissions.
+
+Example:
+
+```ruby
+class UserPolicy < ApplicationPolicy
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
+  end
+
+  def edit?
+    can_write? || user == record
+  end
+
+  def index?
+    can_read?
+  end
+
+  def show?
+    can_read?
+  end
+
+  def new?
+    can_write?
+  end
+
+  def create?
+    can_write?
+  end
+
+  def update?
+    can_write? || user == record
+  end
+end
+```
 
 ## Development
 
