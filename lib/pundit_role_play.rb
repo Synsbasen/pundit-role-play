@@ -20,5 +20,6 @@ module PunditRolePlay
 
   def self.register_role(name)
     roles << name unless name == "ApplicationRole"
+    roles.uniq!
   end
 end
