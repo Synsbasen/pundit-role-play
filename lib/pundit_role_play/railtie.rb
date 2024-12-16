@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails/railtie"
+
 module PunditRolePlay
   class Railtie < Rails::Railtie
     initializer "pundit_role_play.eager_load_roles" do
