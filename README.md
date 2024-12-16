@@ -3,16 +3,11 @@
 Ever wanted to have a simple way to manage roles and permissions in your Rails application? This gem is for you! It provides a simple way to manage roles and permissions using Pundit. All you need to do is define your roles and permissions and then use the `can_read?` and `can_write?` methods in your policies.
 
 ## Installation
+Install the gem by adding it to your Gemfile and run `bundle install`:
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```
+gem "pundit_role_play", github: "Synsbasen/pundit-role-play", branch: "master"
+```
 
 Run the generator to setup an application role:
 
@@ -104,4 +99,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PunditRolePlay project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/pundit_role_play/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the PunditRolePlay project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/Synsbasen/pundit_role_play/blob/master/CODE_OF_CONDUCT.md).
