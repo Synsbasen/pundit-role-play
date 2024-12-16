@@ -5,8 +5,8 @@ require_relative "lib/pundit_role_play/version"
 Gem::Specification.new do |spec|
   spec.name = "pundit_role_play"
   spec.version = PunditRolePlay::VERSION
-  spec.authors = ["Jimmy Poulsen", "Tobias Knudsen"]
-  spec.email = ["jimmypoulsen96@gmail.com", "tobias.knudsen@gmail.com"]
+  spec.authors = [ "Jimmy Poulsen", "Tobias Knudsen" ]
+  spec.email = [ "jimmypoulsen96@gmail.com", "tobias.knudsen@gmail.com" ]
 
   spec.summary = "A simple role based authorization gem for Pundit"
   spec.description = "This gem is a simple role based authorization gem for Pundit.
@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = [ "lib" ]
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"

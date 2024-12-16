@@ -27,4 +27,3 @@ module PunditRolePlay
     end
   end
 end
-
