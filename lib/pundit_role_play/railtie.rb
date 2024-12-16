@@ -9,6 +9,13 @@ module PunditRolePlay
       Rails.application.config.eager_load_paths << Rails.root.join("app", "roles")
     end
 
+    initializer "pundit_role_play.eager_load_roles" do
+      Rails.application.config.to_prepare do
+        # Force Zeitwerk to load all role classes
+        Dir[Rails.root.join("app/roles/**/*.rb")].each { |file| require_dependency file }
+      end
+    end
+
     initializer "pundit_role_play.extend_active_record" do
       ActiveSupport.on_load(:active_record) do
         extend PunditRolePlay::Adapter::ActiveRecord
