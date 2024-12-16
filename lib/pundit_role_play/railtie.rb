@@ -4,13 +4,9 @@ require "rails/railtie"
 
 module PunditRolePlay
   class Railtie < Rails::Railtie
-    initializer "pundit_role_play.eager_load_roles" do
-      # Force Rails to load all role files
-      role_path = Rails.root.join("app", "roles")
-
-      Dir["#{role_path}/**/*.rb"].each do |file|
-        require_dependency file
-      end
+    config.before_configuration do
+      # Add app/roles to eager_load_paths early
+      Rails.application.config.eager_load_paths << Rails.root.join("app", "roles")
     end
 
     initializer "pundit_role_play.extend_active_record" do
