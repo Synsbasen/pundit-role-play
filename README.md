@@ -1,6 +1,6 @@
 # Pundit Role Play
 
-A simple and flexible role-based authorization gem built on top of **Pundit** for Ruby on Rails applications. Pundit Role Play allows developers to manage user roles and permissions in an intuitive way while leveraging Pundit's policy-driven architecture.
+A simple and flexible role-based authorization gem built on top of [Pundit](https://github.com/varvet/pundit) for Ruby on Rails applications. Pundit Role Play allows developers to manage user roles and permissions in an intuitive way while leveraging Pundit's policy-driven architecture.
 
 ## Features
 - Easy role management for users.
