@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'active_support/core_ext/string/inflections'
+
 module PunditRolePlay
   module Adapter
     module ActiveRecord
@@ -23,6 +25,10 @@ module PunditRolePlay
         #
         # Handle the case where the constant does not exist
         raise RoleNotFoundError
+      end
+
+      def has_role?(role)
+        role.to_sym == self.role.underscore.sub(/_role$/, '').to_sym
       end
 
       def pretty_role_name
